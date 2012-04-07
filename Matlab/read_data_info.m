@@ -25,32 +25,32 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% Changes the metadata file DATA_INFO.CSV by updating it with the newest
-% parameter values stored in handles.info
-%
-% Returns the set of fields in DATA_INFO.CSV that were changed by this
-% update.
+function info = read_data_info(data_set_name)
+% reads the CSV version of data_info for data_set_name
+% if the data set is not foumd, it returns an empty array
 
-function fields = changed_data_info(handles)
+FILENAME = fullfile('..', 'DATA_INFO.csv');
+% assumes the first column is the name and the rest are
+% numerical values
 
-data_set_name = handles.data_set;
-FILENAME = '../DATA_INFO.csv';
-
+% count the number of columns by counting the number of commas in the first
+% row and adding 1 (because # columns = # commas + 1)
 fid = fopen(FILENAME);
-% count the number of columns
 count_commas = textscan(fid, '%s', 1);
 count_commas = count_commas{1};
 count_commas = count_commas{1};
 num_cols = sum(count_commas == ',') + 1;
 fclose(fid);
 
+% get the labels and all the data
 labels_format_string =              repmat('%s', 1, num_cols);
 data_format_string   = strcat('%s', repmat('%n', 1, num_cols-1));
-% 
+
 fid = fopen(FILENAME);
 labels = textscan(fid, labels_format_string, 1, 'delimiter', ',');  % the 1 means just read this 1 time
 data = textscan(fid, data_format_string, 'delimiter', ','); 
 fclose(fid);
+
 
 for i = 1:length(labels)
     labels{i} = char(labels{i});
@@ -58,24 +58,34 @@ end
 
 all_data_set_names = data{1};
 
-
-% I just re-create the whole file (not ideal...) 
-% --> although this is not as silly if sorting alphabetically...
-fid = fopen(FILENAME);
-
-fields = cell(0);  % tells you what fields were changed
+info = [];
 for i = 1:length(all_data_set_names)
     if strcmp(all_data_set_names{i}, data_set_name)
-        writedata = zeros(1, length(labels)-1);
+        % create the "info" structure
+%         info = struct(labels);
+        info = cell2struct(cell(length(labels), 1), labels, 1);
         for j = 2:length(labels)  % start at 2 to skip the name
-            writedata(j-1) = handles.info.(labels{j});
-            if writedata(j-1) ~= data{j}(i) && ~(isnan(writedata(j-1)) && isnan(data{j}(i)))
-                fields{length(fields)+1} = labels{j};
+            if iscell(data{j})
+                % this should never happen
+                info.(labels{j}) = data{j}{i};
+            else
+                info.(labels{j}) = data{j}(i);
             end
         end
-    else
+        break;
     end
 end
 
-fclose(fid);
+      
+dummy_val = NaN;
+% if didn't find anything, fill the fields with a dummy val
+if isempty(info)
+    for j = 2:length(labels)
+        info.(labels{j}) = dummy_val;
+    end
+    info.notfound = 1;
+else
+    info.notfound = 0;
+end
+    
 

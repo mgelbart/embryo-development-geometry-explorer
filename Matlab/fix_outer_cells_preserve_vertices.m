@@ -25,57 +25,71 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% Changes the metadata file DATA_INFO.CSV by updating it with the newest
-% parameter values stored in handles.info
-%
-% Returns the set of fields in DATA_INFO.CSV that were changed by this
-% update.
-
-function fields = changed_data_info(handles)
-
-data_set_name = handles.data_set;
-FILENAME = '../DATA_INFO.csv';
-
-fid = fopen(FILENAME);
-% count the number of columns
-count_commas = textscan(fid, '%s', 1);
-count_commas = count_commas{1};
-count_commas = count_commas{1};
-num_cols = sum(count_commas == ',') + 1;
-fclose(fid);
-
-labels_format_string =              repmat('%s', 1, num_cols);
-data_format_string   = strcat('%s', repmat('%n', 1, num_cols-1));
-% 
-fid = fopen(FILENAME);
-labels = textscan(fid, labels_format_string, 1, 'delimiter', ',');  % the 1 means just read this 1 time
-data = textscan(fid, data_format_string, 'delimiter', ','); 
-fclose(fid);
-
-for i = 1:length(labels)
-    labels{i} = char(labels{i});
-end
-
-all_data_set_names = data{1};
+% Erodes the image by deleting pixels close to the boundary
+% from all 4 sides. Does not delete a pixel if it is vertex
+% The code here is horrible. it could be much
+% faster and probably otherwise better. But that's ok, people don't use
+% this function much anyway ;)
 
 
-% I just re-create the whole file (not ideal...) 
-% --> although this is not as silly if sorting alphabetically...
-fid = fopen(FILENAME);
+function bords = fix_outer_cells_preserve_vertices(x)
 
-fields = cell(0);  % tells you what fields were changed
-for i = 1:length(all_data_set_names)
-    if strcmp(all_data_set_names{i}, data_set_name)
-        writedata = zeros(1, length(labels)-1);
-        for j = 2:length(labels)  % start at 2 to skip the name
-            writedata(j-1) = handles.info.(labels{j});
-            if writedata(j-1) ~= data{j}(i) && ~(isnan(writedata(j-1)) && isnan(data{j}(i)))
-                fields{length(fields)+1} = labels{j};
+
+Ys = size(x, 1);
+Xs = size(x, 2);
+
+% the old definition of vertices, different from bwmorph('branchpoints')
+f = @(x) (x(2,2) && (sum(x(:)) >= 4));
+lut = makelut(f, 3);
+vertplot = applylut(x, lut);
+
+
+
+bords = x;
+
+for i = 1:Ys
+    for j = 1:Xs
+        if x(i, j)
+            if ~vertplot(i, j)
+                bords(i, j) = 0;
             end
+            break;
         end
-    else
     end
 end
 
-fclose(fid);
+for i = 1:Ys
+    for j = Xs:-1:1
+        if x(i, j)
+            if ~vertplot(i, j)
+                bords(i, j) = 0;
+            end
+            break;
+        end
+    end
+end
 
+
+
+
+for i = 1:Xs
+    for j = 1:Ys
+        if x(j, i)
+            if ~vertplot(j, i)
+                bords(j, i) = 0;
+            end
+            break;
+        end
+    end
+end
+
+for i = 1:Xs
+    for j = Ys:-1:1
+        if x(j, i) 
+            if ~vertplot(j, i)
+                bords(j, i) = 0;
+            end
+            break;
+        end
+    end
+end
