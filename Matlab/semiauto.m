@@ -269,11 +269,16 @@ function keyFunction(hObject, eventdata)
 %             elseif get(handles.radiobutton_adjust_vertices, 'Value')
 %                 vec_add_vertex_Callback(hObject, eventdata, handles);
             end
-        case 'm' || 'g'
+        case 'm'
             if get(handles.radiobutton_adjust_vertices, 'Value') && ...
                     length(handles.activeVertex) == 1
                 vec_move_vertex_Callback(hObject, eventdata, handles);
             end
+        case 'g'  % same as 'm'
+            if get(handles.radiobutton_adjust_vertices, 'Value') && ...
+                    length(handles.activeVertex) == 1
+                vec_move_vertex_Callback(hObject, eventdata, handles);
+            end            
         case 'f'
             if get(handles.radiobutton_adjust_vertices, 'Value') && ...
                     length(handles.activeVertex) == 2
@@ -2839,6 +2844,12 @@ function vec_activate_cell_Callback(hObject, eventdata, handles)
             for time_i = handles.time_array%handles.info.start_time:handles.info.end_time
                 set(handles.text_processing_time,  'String', num2str(time_i));
                 for layer_i = handles.layer_array%handles.info.bottom_layer:my_sign(handles.info.top_layer-handles.info.bottom_layer):handles.info.top_layer
+                    if get(handles.radiobutton_vec_auto_someimg, 'Value')
+                        if query_for_image_subset_skip(handles.some_auto_range, time_i, layer_i)
+                            continue;
+                        end
+                    end
+                    
                     set(handles.text_processing_layer, 'String', num2str(layer_i));
                     drawnow;
                          
