@@ -269,7 +269,7 @@ function keyFunction(hObject, eventdata)
 %             elseif get(handles.radiobutton_adjust_vertices, 'Value')
 %                 vec_add_vertex_Callback(hObject, eventdata, handles);
             end
-        case 'm'
+        case 'm' || 'g'
             if get(handles.radiobutton_adjust_vertices, 'Value') && ...
                     length(handles.activeVertex) == 1
                 vec_move_vertex_Callback(hObject, eventdata, handles);
