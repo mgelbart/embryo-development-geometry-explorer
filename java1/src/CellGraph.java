@@ -1666,8 +1666,7 @@ public class CellGraph implements java.io.Serializable {
 	
 	// takes time Xs * Ys * nCells * C  where C is the point-in-polygon size and is a constant
 	public double[][] drawRegions() {
-		// first, draw the Cell regions. Then, draw the borders. That way the borders
-		// can't have any holes in them
+		// first, draw the Cell regions. 
 		double[][] image = new double[Ys][Xs];
 		
 		for (Cell c : cells()) {
@@ -1681,15 +1680,16 @@ public class CellGraph implements java.io.Serializable {
 						image[y][x] = c.index();
 		}
 		
-		// draw the borders
-		double borders[][] = draw();
-		
-		// set background to 0 and borders to -1, so that
-		// cells can start from 1
-		for (int y = 0; y < Ys; y++)
-			for (int x = 0; x < Xs; x++)
-				if (borders[y][x] > 0) 
-				image[y][x] = -1;
+//		// Then, draw the borders. That way the borders
+//		// can't have any holes in them	
+//		double borders[][] = draw();
+//		
+//		// set background to 0 and borders to -1, so that
+//		// cells can start from 1
+//		for (int y = 0; y < Ys; y++)
+//			for (int x = 0; x < Xs; x++)
+//				if (borders[y][x] > 0) 
+//					image[y][x] = -1;
 		
 		return image;
 	}
