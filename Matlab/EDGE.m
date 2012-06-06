@@ -83,6 +83,9 @@ function EDGE_OpeningFcn(hObject, eventdata, handles, varargin)
     % varargin   command line arguments to EDGE (see VARARGIN)
     clc;
     
+    % *** SET THE JAVA PATH *** 
+    set_edge_java_path;
+    
     % info from semiauto, if you got here by switching
     if ~isempty(varargin) && length(varargin) > 1
         passinfo = varargin{2};

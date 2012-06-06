@@ -25,17 +25,17 @@ end
 fprintf(fid, '\n%s', JAVA_MEMORY_STRING);
 fclose(fid);
 
-%% edit the classpath file
-java_path = fullfile(program_dir, JAVA_NAME);
-classpath_name = fullfile(matlabroot, 'toolbox', 'local', 'classpath.txt');
-fid = fopen(classpath_name, 'a');
-if fid < 0
-    disp(strcat('install.m: Cannot find file ', classpath_name));
-    disp('Installation aborted.');
-    return;
-end
-fprintf(fid, '\n%s', java_path);
-fclose(fid);
+%% edit the classpath file -- NOW ADDED TO DYNAMIC PATH IN semiauto.m AND edge.m
+% java_path = fullfile(program_dir, JAVA_NAME);
+% classpath_name = fullfile(matlabroot, 'toolbox', 'local', 'classpath.txt');
+% fid = fopen(classpath_name, 'a');
+% if fid < 0
+%     disp(strcat('install.m: Cannot find file ', classpath_name));
+%     disp('Installation aborted.');
+%     return;
+% end
+% fprintf(fid, '\n%s', java_path);
+% fclose(fid);
 
 %% add the Measurements and Matlab folders to the path
 matlab_path = fullfile(program_dir, MATLAB_NAME);

@@ -83,6 +83,10 @@ function semiauto_OpeningFcn(hObject, eventdata, handles, varargin) %#ok<*INUSL>
     % handles    structure with handles and user data (see GUIDATA)
     % varargin   command line arguments to semiauto (see VARARGIN)
     clc;
+    
+    % *** SET THE JAVA PATH *** 
+    set_edge_java_path;
+   
     handles.file_ext = 'tif';
     
     % info from EDGE, if you got here by switching
