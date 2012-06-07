@@ -684,6 +684,8 @@ no, actually, it will be FINE with any layers to look back. that is an amazing r
 */
 	
 	// returns null if nothing is found
+	// if matchCandidates is true then it will check that the two cells actually match each other
+	// if it is false then it will just look for centroid-matches
 	private Cell backtrackCell(Cell cTrack, int t, int z, boolean matchCandidates) {
 		int reft = translateT(masterTime);
 		int refz = translateZ(masterLayer);
@@ -1223,14 +1225,25 @@ no, actually, it will be FINE with any layers to look back. that is an amazing r
 					pair[0] = cThis;
 					pair[1] = cNeigh;
 					candidates.add(pair);
+					
+					double SUBTRACTION_MULTIPLIER = 0.5;
+					double subtractionTerm = 0;
+					if (cNeigh.isActive()) {
+						Cell cNeighBack = backtrackCell(cNeigh, translateT(T), translateZ(Z), false); // false so it doesn't need to check if they really match
+						if (cNeighBack != null) {
+							subtractionTerm = overlapScore(cNeigh, cNeighBack) * SUBTRACTION_MULTIPLIER;
+						}
+					}
+					
 //					double overlap = cg.getCell(newInd).overlapArea(backtrackCell(cg.getCell(newInd), translateT(t), translateZ(z)));
 //					overlap /= cg.getCell(newInd).area();
 					candidatesOverlap.add(
 							overlapScore(cg.getCell(newInd), backtrackCell(cg.getCell(newInd), translateT(T), translateZ(Z), true))
-//							-(cNeigh.isActive()?overlapScore(cNeigh, backtrackCell(cNeigh, translateT(T), translateZ(Z), true)):0)
+							-subtractionTerm
 					);
 					// Jan 2011- added this subtraction: how much does it IMPROVE the overlap score
 					// from what that neighbor cell had before
+					// June 2012 - added multiplier of 1/2 to this term -- may need adjusting...
 					
 					// success
 //					break; 
