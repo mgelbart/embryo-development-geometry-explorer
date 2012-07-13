@@ -1,3 +1,10 @@
 name,Ys,Xs,microns_per_pixel,microns_per_z_step,seconds_per_frame,start_time,end_time,master_time,top_layer,bottom_layer,master_layer,minimum_cell_size,bandpass_low,bandpass_high,number_of_erosions,preprocessing_threshold,refine_max_angle,refine_min_angle,refine_min_edge_length,tracking_area_change_Z,tracking_layers_back_Z,tracking_centroid_distance_Z,tracking_area_change_T,tracking_layers_back_T,tracking_centroid_distance_T
 __DEFAULT__,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,NaN,4,2.5,7,0,-0.4,170,90,0,0.4,4,10,0.4,4,10
-
+Mimi,400,1044,0.18,0.18,8,1,60,1,3,5,5,5,2,30,1,-0.2,170,110,1,0.7,3,2,0.7,3,2
+2ph-100503_V2,128,256,0.35,1,12,1,199,108,1,100,21,4,2.5,7,0,-0.4,170,90,0,0.4,4,10,0.4,4,10
+00scratch,128,256,0.35,1,12,1,199,108,1,100,21,4,2.5,7,0,-0.4,155,110,1,0.4,4,10,0.4,4,10
+segonly,128,256,0.35,1,12,1,199,108,1,100,21,4,2.5,7,0,-0.4,155,110,1,0.4,4,10,0.4,4,10
+segandauto,128,256,0.35,1,12,1,199,108,1,100,21,4,2.5,7,0,-0.4,155,110,1,0.4,4,10,0.4,4,10
+segandauto2,128,256,0.35,1,12,1,199,108,1,100,21,4,2.5,7,0,-0.4,155,110,1,0.7,4,10,0.6,4,10
+segandauto3,128,256,0.35,1,12,1,199,108,1,100,21,4,2.5,7,0,-0.4,155,110,1,0.6,4,10,0.6,4,10
+abridged,128,256,0.35,1,12,98,100,98,1,44,21,4,2.5,7,0,-0.4,155,110,1,0.5,4,10,0.5,4,10

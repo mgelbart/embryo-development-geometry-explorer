@@ -109,11 +109,12 @@ handles = semiauto_change_image_callbacks(handles);
 % initial draw
 slider_callbacks_draw_image_slice(handles);
 
-% a good order for doing error correction operations and the like
-handles.layer_array = [handles.info.master_layer:my_sign(handles.info.top_layer-handles.info.bottom_layer):handles.info.top_layer ...
-    handles.info.master_layer-my_sign(handles.info.top_layer-handles.info.bottom_layer):-my_sign(handles.info.top_layer-handles.info.bottom_layer):handles.info.bottom_layer];
-handles.time_array = [handles.info.master_time:my_sign(handles.info.end_time-handles.info.start_time):handles.info.end_time ...
-    handles.info.master_time-1:-my_sign(handles.info.end_time-handles.info.start_time):handles.info.start_time];
+% (below moved to initialize_tz_sliders.m)
+% % a good order for doing error correction operations and the like
+% handles.layer_array = [handles.info.master_layer:my_sign(handles.info.top_layer-handles.info.bottom_layer):handles.info.top_layer ...
+%     handles.info.master_layer-my_sign(handles.info.top_layer-handles.info.bottom_layer):-my_sign(handles.info.top_layer-handles.info.bottom_layer):handles.info.bottom_layer];
+% handles.time_array = [handles.info.master_time:my_sign(handles.info.end_time-handles.info.start_time):handles.info.end_time ...
+%     handles.info.master_time-1:-my_sign(handles.info.end_time-handles.info.start_time):handles.info.start_time];
 
 % make directories if they dont exist
 [a b c] = mkdir(handles.tempsrc.parent);

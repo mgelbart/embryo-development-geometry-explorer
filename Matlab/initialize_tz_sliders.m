@@ -90,3 +90,11 @@ end
 % new data set for the first time
 set(handles.z_slider, 'Enable', 'on');
 set(handles.t_slider, 'Enable', 'on');
+
+
+% a good order for doing error correction operations and the like
+handles.layer_array = [handles.info.master_layer:my_sign(handles.info.top_layer-handles.info.bottom_layer):handles.info.top_layer ...
+    handles.info.master_layer-my_sign(handles.info.top_layer-handles.info.bottom_layer):-my_sign(handles.info.top_layer-handles.info.bottom_layer):handles.info.bottom_layer];
+handles.time_array = [handles.info.master_time:my_sign(handles.info.end_time-handles.info.start_time):handles.info.end_time ...
+    handles.info.master_time-1:-my_sign(handles.info.end_time-handles.info.start_time):handles.info.start_time];
+
