@@ -1226,7 +1226,7 @@ no, actually, it will be FINE with any layers to look back. that is an amazing r
 					pair[1] = cNeigh;
 					candidates.add(pair);
 					
-					double SUBTRACTION_MULTIPLIER = 0.5;
+					double SUBTRACTION_MULTIPLIER = 0.7;
 					double subtractionTerm = 0;
 					if (cNeigh.isActive()) {
 						Cell cNeighBack = backtrackCell(cNeigh, translateT(T), translateZ(Z), false); // false so it doesn't need to check if they really match
