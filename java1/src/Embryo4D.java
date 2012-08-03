@@ -1226,7 +1226,7 @@ no, actually, it will be FINE with any layers to look back. that is an amazing r
 					pair[1] = cNeigh;
 					candidates.add(pair);
 					
-					double SUBTRACTION_MULTIPLIER = 0.5;
+					double SUBTRACTION_MULTIPLIER = 0.7;
 					double subtractionTerm = 0;
 					if (cNeigh.isActive()) {
 						Cell cNeighBack = backtrackCell(cNeigh, translateT(T), translateZ(Z), false); // false so it doesn't need to check if they really match
@@ -1371,7 +1371,9 @@ no, actually, it will be FINE with any layers to look back. that is an amazing r
 //					System.out.println(cg.getCell(newIndex1));
 //					System.out.println(cg.getCell(newIndex2));
 										
-					if (CellGraph.isActive(newIndex1) && CellGraph.isActive(newIndex2)) {
+					if (CellGraph.isActive(newIndex1) && CellGraph.isActive(newIndex2) &&
+							backtrackCell(cg.getCell(newIndex1), translateT(T), translateZ(Z), true) != null &&
+							backtrackCell(cg.getCell(newIndex2), translateT(T), translateZ(Z), true) != null) {
 						Vertex[] newPair = new Vertex[2];
 						newPair[0] = v;
 						newPair[1] = w;

@@ -43,7 +43,7 @@ t(1)=toc;
 
 % a special clause for totally blank images (these are "fillers")
 if ~any(cells(:))
-   CellGraph(cells, [], [], T, Z, NaN, NaN);
+   CellGraph(cells, [], [], T, Z, NaN, NaN, NaN);
 end
 
 
