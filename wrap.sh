@@ -1,1 +1,3 @@
-zip -r EDGE-102 DATA_INFO.csv install.m install_nopermissions.m java1 Matlab Measurements
+#!/bin/bash
+
+zip -r EDGE-$1.zip DATA_INFO.csv install.m java1 Matlab Measurements
