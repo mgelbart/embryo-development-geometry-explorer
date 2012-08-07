@@ -1067,7 +1067,7 @@ function button_manually_select_cells_Callback(hObject, eventdata, handles)
         set(handles.button_neighbors_minus, 'Enable', 'off');
     else
         handles.activeCell = [];
-        set(handles.button_manually_select_cells, 'String', 'select manually');
+        set(handles.button_manually_select_cells, 'String', 'select multiple');
         set(handles.edit_neighbors_order, 'Enable', 'on');
         set(handles.button_neighbors_plus, 'Enable', 'on');
         set(handles.button_neighbors_minus, 'Enable', 'on');

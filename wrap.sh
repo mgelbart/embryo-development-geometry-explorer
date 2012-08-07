@@ -1,6 +1,6 @@
 #!/bin/bash
 
-javac java1/src/*.java -d java1/bin
+javac java1/src/*.java -d java1/bin -source 1.5
 
 mv DATA_INFO.csv DATA_INFO_TEMP.csv
 mv DATA_INFO_DEFAULT.csv DATA_INFO.csv
