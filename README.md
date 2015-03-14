@@ -7,11 +7,11 @@ EDGE was created by [Michael Gelbart](http://people.seas.harvard.edu/~mgelbart),
 Download EDGE [here](https://github.com/mgelbart/embryo-development-geometry-explorer/archive/master.zip).
 
 ## Documentation
-[Installing EDGE](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Installation.md)
-[Using the EDGE Importer](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Importer.md)
-[Using the EDGE Browser](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Browser.md)
-[Keyboard Shortcuts](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/KeyboardShortcuts.md)
-[List of all Wiki pages](https://github.com/mgelbart/embryo-development-geometry-explorer/tree/wiki)
+* [Installing EDGE](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Installation.md)
+* [Using the EDGE Importer](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Importer.md)
+* [Using the EDGE Browser](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Browser.md)
+* [Keyboard Shortcuts](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/KeyboardShortcuts.md)
+* [List of all Wiki pages](https://github.com/mgelbart/embryo-development-geometry-explorer/tree/wiki)
 
 ## Contact
 Please contact Michael Gelbart at michael (dot) gelbart (at) gmail (dot) com if you have questions or comments.
