@@ -4,7 +4,7 @@ Embryo Development Geometry Explorer (EDGE) is a software package for analyzing 
 EDGE was created by [Michael Gelbart](http://people.seas.harvard.edu/~mgelbart), [Matthias Kaschube](http://fias.uni-frankfurt.de/neuro/kaschube/), [Adam Martin](http://mit.edu/biology/www//facultyareas/facresearch/martin.html) and [Eric Wieschaus](http://molbio.princeton.edu/faculty/molbio-faculty/140-wieschaus) at Princeton University.
 
 ## Download
-Download EDGE [here](https://github.com/mgelbart/embryo-development-geometry-explorer/archive/master.zip).
+Download EDGE [here](https://github.com/mgelbart/embryo-development-geometry-explorer/archive/master.zip) or clone the git repository using the link on the right-hand side of this page.
 
 ## Documentation
 * [Installing EDGE](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Installation.md)
