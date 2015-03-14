@@ -1,6 +1,7 @@
+## About
 Embryo Development Geometry Explorer (EDGE) is a software package for analyzing microscope images of developing embryos. It takes as its input a stack of membrane-tagged images (or, optionally, a "4D" stack that includes a temporal dimension) and builds a 3D reconstruction of the cells. It then can compute various geometric properties of the cells, including user-specified properties through a Matlab API. EDGE was developed specifically for Drosophila embryo development data but can be used for a variety of systems.
 
-EDGE was created by Michael Gelbart, Matthias Kaschube, Adam Martin and Eric Wieschaus at Princeton University.
+EDGE was created by [Michael Gelbart](http://people.seas.harvard.edu/~mgelbart), Matthias Kaschube, Adam Martin and Eric Wieschaus at Princeton University.
 
 Download
 Download EDGE here.
