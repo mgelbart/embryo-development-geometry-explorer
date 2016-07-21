@@ -24,7 +24,7 @@ If you have any questions, comments, or issues, please contact mgelbart (at) cs 
 ## Citing EDGE ##
 If you use EDGE in your work, please cite the following paper:
 
-Michael A. Gelbart, Bing He, Adam C. Martin, Stephan Thiberge, Eric F. Wieschaus, Matthias Kaschube. Volume conservation principle involved in cell lengthening and nucleus movement during tissue morphogenesis. Proc Natl Acad Sci, 109(47):19298-19303, 2012. [BibTeX](http://people.seas.harvard.edu/~mgelbart/publications/Gelbart2012.bib)
+Michael A. Gelbart, Bing He, Adam C. Martin, Stephan Thiberge, Eric F. Wieschaus, Matthias Kaschube. Volume conservation principle involved in cell lengthening and nucleus movement during tissue morphogenesis. Proc Natl Acad Sci, 109(47):19298-19303, 2012. [BibTeX](EDGE_paper.bib)
 
 ## Screenshots ##
 ![screenshots/Screenshot_semiauto_cells.png](screenshots/Screenshot_semiauto_cells.png)
