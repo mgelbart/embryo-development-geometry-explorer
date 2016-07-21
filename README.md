@@ -11,7 +11,7 @@ Download EDGE [here](https://github.com/mgelbart/embryo-development-geometry-exp
 * [Using the EDGE Importer](doc/Importer.md)
 * [Customizing the EDGE Importer](doc/ImporterSettings.md)
 * [Using the EDGE Browser](doc/Browser.md)
-* [Creating Measurements in the EDGE Browser](Measurements.md)
+* [Creating Measurements in the EDGE Browser](doc/Measurements.md)
 * [Keyboard Shortcuts](doc/KeyboardShortcuts.md)
 * [Error Correction](doc/ErrorCorrection.md)
 * [Image Processing](doc/ImageProcessing.md)

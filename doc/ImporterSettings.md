@@ -43,4 +43,4 @@ When the tracking algorithm fails to find a match for a cell, it can optionally 
 The tracking algorithm requires the centroids of two cells to be within some cutoff distance in order for the cells to be matched. This parameter specifies this distance and is measured in microns. Default: 10 microns.
 
 # Further information #
-For more details on how these parameters are used, see the [Supporting Information](http://people.seas.harvard.edu/~mgelbart/publications/Gelbart2012_SI.pdf) section of our [publication on EDGE](http://people.seas.harvard.edu/~mgelbart/publications/Gelbart2012.pdf).
+For more details on how these parameters are used, see the [Supporting Information](http://www.cs.ubc.ca/~mgelbart/publications/Gelbart2012_SI.pdf) section of our [publication on EDGE](http://www.cs.ubc.ca/~mgelbart/publications/Gelbart2012.pdf).
