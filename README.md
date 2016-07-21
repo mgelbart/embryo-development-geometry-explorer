@@ -13,8 +13,8 @@ Download EDGE [here](https://github.com/mgelbart/embryo-development-geometry-exp
 * [Keyboard Shortcuts](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/KeyboardShortcuts.md)
 * [List of all Wiki pages](https://github.com/mgelbart/embryo-development-geometry-explorer/tree/wiki)
 
-## Contact ##
-Please contact Michael Gelbart at michael (dot) gelbart (at) gmail (dot) com if you have questions or comments.
+## Questions ##
+If you have any questions, comments, or issues, please contact mgelbart (at) cs (dot) ubc (dot) ca or open an issue here on GitHub.
 
 ## Citing EDGE ##
 If you use EDGE in your work, please cite the following paper:
