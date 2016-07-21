@@ -7,11 +7,16 @@ EDGE was created by [Michael Gelbart](http://www.cs.ubc.ca/~mgelbart), [Matthias
 Download EDGE [here](https://github.com/mgelbart/embryo-development-geometry-explorer/archive/master.zip) or clone the git repository using the link on the right-hand side of this page.
 
 ## Documentation ##
-* [Installing EDGE](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Installation.md)
-* [Using the EDGE Importer](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Importer.md)
-* [Using the EDGE Browser](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/Browser.md)
-* [Keyboard Shortcuts](https://github.com/mgelbart/embryo-development-geometry-explorer/blob/wiki/KeyboardShortcuts.md)
-* [List of all Wiki pages](https://github.com/mgelbart/embryo-development-geometry-explorer/tree/wiki)
+* [Installing EDGE](doc/Installation.md)
+* [Using the EDGE Importer](doc/Importer.md)
+* [Customizing the EDGE Importer](doc/ImporterSettings.md)
+* [Using the EDGE Browser](doc/Browser.md)
+* [Creating Measurements in the EDGE Browser](Measurements.md)
+* [Keyboard Shortcuts](doc/KeyboardShortcuts.md)
+* [Error Correction](doc/ErrorCorrection.md)
+* [Image Processing](doc/ImageProcessing.md)
+
+
 
 ## Questions ##
 If you have any questions, comments, or issues, please contact mgelbart (at) cs (dot) ubc (dot) ca or open an issue here on GitHub.
