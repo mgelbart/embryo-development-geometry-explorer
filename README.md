@@ -19,7 +19,7 @@ Download EDGE [here](https://github.com/mgelbart/embryo-development-geometry-exp
 
 
 ## Questions ##
-If you have any questions, comments, or issues, please contact mgelbart (at) cs (dot) ubc (dot) ca or open an issue here on GitHub.
+Unfortunately, EDGE is no longer supported by the developer. You could try opening an Issue in this repository but it is unlikely to be answered.
 
 ## Citing EDGE ##
 If you use EDGE in your work, please cite the following paper:
